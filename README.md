@@ -2,4 +2,6 @@
 
 Website: https://astrorix.github.io/MARG/
 
-Paper: https://ieeexplore.ieee.org/document/11196002
+Paper: 
+
+Video: https://youtu.be/2zjuUe_IDtw
