@@ -23,9 +23,6 @@
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
   
-  <script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-  </script>
 </head>
 <body>
 
@@ -73,19 +70,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video poster="" id="teaser" autoplay controls muted loop height="100%">
-          <source src="static/videos/contact_zip.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
-          Zero-shot sim-to-real transfer of tactile manipulation policies using ConTact.
-        </h2>
       </div>
     </div>
   </section>
@@ -141,14 +125,6 @@
                 <img src="static/images/fig2_sensor.png" alt="Tactile Sensor" style="width: 50%;">
                 <p>Real-world vs Simulated Tactile Array</p>
               </div>
-              <div class="item has-text-centered">
-                 <img src="static/images/fig6_reconstruction.png" alt="Reconstruction" style="width: 60%;">
-                <p>Real-world Input vs Reconstructed Signal</p>
-              </div>
-              <div class="item has-text-centered">
-                 <img src="static/images/fig5_tsne.png" alt="Latent Space" style="width: 60%;">
-                <p>t-SNE visualization of aligned latent features</p>
-              </div>
             </div>
           </div>
         </div>
@@ -194,6 +170,34 @@
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <div class="columns has-text-left">
+              <h2 class="title">Reconstruction & Feature Alignment</h2>
+            </div>
+            <div class="columns">
+              <div class="column">
+                <div class="item has-text-centered">
+                  <img src="static/images/fig6_reconstruction.png" alt="Reconstruction" style="width: 80%;">
+                  <p>Real-world Input vs Reconstructed Signal</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="item has-text-centered">
+                  <img src="static/images/fig5_tsne.png" alt="Latent Space" style="width: 80%;">
+                  <p>t-SNE visualization of aligned latent features</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="columns has-text-left">
               <h2 class="title">Zero-Shot Real-World Deployment</h2>
             </div>
 
@@ -209,20 +213,6 @@
               <p>
                 Our force-based tactile model significantly outperforms binary-signal baselines. As shown in our ablation studies, binary signals are ambiguous and unable to differentiate unstable states in the Composite Object Tracking task.
               </p>
-              
-              <h3 class="title is-5">Methodology: Loss Function</h3>
-              <p>
-                To align the latent representations, we employ a symmetric contrastive loss. For a batch of \(N\) paired tactile arrays, the loss for aligning simulation (A) to real-world (B) is:
-              </p>
-              $$
-              \mathcal{L}_{A\rightarrow B}=-\frac{1}{N}\sum_{i=1}^{N}\log\frac{\exp(s(z_{i}^{A},z_{i}^{B})/\tau)}{\sum_{j=1}^{N}\exp(s(z_{i}^{A},z_{j}^{B})/\tau)}
-              $$
-              <p>
-                We also introduce a reconstruction loss to capture subtle dynamics, prioritizing temporal changes:
-              </p>
-              $$
-              \mathcal{L}_{recon}=w_{0}||\hat{I}_{1}-I_{1}||_{2}^{2}+\sum_{t=2}^{W}w_{\Delta}||\Delta\hat{I}_{t}-\Delta I_{t}||_{2}^{2}
-              $$
             </div>
           </div>
         </div>
