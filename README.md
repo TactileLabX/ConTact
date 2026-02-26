@@ -5,5 +5,4 @@ Website:[ https://github.com/TactileLabX/ConTact](https://tactilelabx.github.io/
 
 Video: https://youtu.be/2zjuUe_IDtw
 
-% Paper: 
 
